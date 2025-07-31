@@ -1,0 +1,9 @@
+/** Test Formulas Remove Blank Rows and Columns
+*/
+RemoveBlanks = LAMBDA(array,
+LET(
+isBlank,ISBLANK(array),
+blankRow,BYROW(isBlank,AND),
+blankCol,BYCOL(isBlank,AND),
+result,FILTER(FILTER(array,NOT(blankRow)),NOT(blankCol)),
+result));
